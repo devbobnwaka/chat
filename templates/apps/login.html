@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<a href="{% url 'app:index' %}">Landing Page</a>
+<h3>Login</h3>
+
+    <form action="" method="post" id="form_login">
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+
+        <button type="submit">Login</button>
+    </form>
+    <a href='{% url "app:register" %}'>Register</a>
+
+{% endblock content %}

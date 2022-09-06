@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <div>List of Chatted </div>
+    <div>Chat corner
+        <h1>{{ receiver.first_name }} {{ receiver.last_name }}</h1>
+    </div>
+</div>
+{{ room_name|json_script:"room-name" }}
+<form action="" method="POST" id="msg">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Send</button>
+</form>
+
+
+{% endblock content %}
